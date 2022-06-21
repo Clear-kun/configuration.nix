@@ -18,6 +18,8 @@
 
       nixosModules = exportModules [ ./hosts/nixos.nix ];
      
+      channelsConfig.allowUnfree = true;
+
       hosts = { nixos.modules = with self.nixosModules; [ nixos ]; };
     
       outputsBuilder = channels: {
