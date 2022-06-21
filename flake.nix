@@ -16,11 +16,11 @@
       inherit self inputs;
       supportedSystems = fup.lib.defaultSystems;
 
-      nixosModules = exportModules [ ./hosts/nixos.nix ];
+      nixosModules = exportModules [ ./hosts/vm ];
      
       channelsConfig.allowUnfree = true;
 
-      hosts = { nixos.modules = with self.nixosModules; [ nixos ]; };
+      hosts = { vm.modules = with self.nixosModules; [ vm ]; };
     
       outputsBuilder = channels: {
         devShell = channels.nixpkgs.mkShell { packages = with pkgs; [ nixfmt ]; };
