@@ -21,7 +21,7 @@
       hosts = { nixos.modules = with self.nixosModules; [ nixos ]; };
     
       outputsBuilder = channels: {
-        devShell = channels.nixpkgs.mkShell { packages = with pkgs; [ nixfmt ] };
+        devShell = channels.nixpkgs.mkShell { packages = with pkgs; [ nixfmt ]; };
       };
     };
 }
