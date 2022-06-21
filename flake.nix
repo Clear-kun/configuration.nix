@@ -16,7 +16,7 @@
       inherit self inputs;
       supportedSystems = fup.lib.defaultSystems;
 
-      nixosModules = exportModules [ ./hosts/nixos ];
+      nixosModules = exportModules [ ./hosts/nixos.nix ];
      
       hosts = { nixos.modules = with self.nixosModules; [ nixos ]; };
     
