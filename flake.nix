@@ -18,7 +18,7 @@
 
       nixosModules = exportModules [ ./hosts/nixos ];
      
-      hosts = { nixos.modules = with self.nixosModules; [ nixos ] };
+      hosts = { nixos.modules = with self.nixosModules; [ nixos ]; };
     
       outputsBuilder = channels: {
         devShell = channels.nixpkgs.mkShell { packages = with pkgs; [ nixfmt ] };
